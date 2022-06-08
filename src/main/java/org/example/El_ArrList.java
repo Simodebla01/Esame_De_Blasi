@@ -23,9 +23,16 @@ public class El_ArrList {
         add_Prodotti("honda",5,353.52);
         add_Prodotti("clclcl",6,1416.85);
     }
+
     String all(){
         String msg="";
-        return gson.toJson(arr);
+        String result;
+        result="{\"cars\":";
+        for (int i = 0; i < arr.size(); i++) {
+            result=result+gson.toJson(arr.get(i));
+        }
+        result=result+"}";
+        return result;
 
     }
 
@@ -35,7 +42,13 @@ public class El_ArrList {
     }
     String allSorted(){
         arr.sort((Cars p1, Cars p2)->(int) (p1.price-p2.price));
-        return gson.toJson(arr);
+        String result;
+        result="{\"cars\":";
+        for (int i = 0; i < arr.size(); i++) {
+            result=result+gson.toJson(arr.get(i));
+        }
+        result=result+"}";
+        return result;
     }
 
 

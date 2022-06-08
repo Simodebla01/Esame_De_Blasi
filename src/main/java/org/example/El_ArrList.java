@@ -27,11 +27,11 @@ public class El_ArrList {
     String all(){
         String msg="";
         String result;
-        result="{\"cars\":";
+        result="[{\"cars\":";
         for (int i = 0; i < arr.size(); i++) {
             result=result+gson.toJson(arr.get(i));
         }
-        result=result+"}";
+        result=result+"}]";
         return result;
 
     }
@@ -43,11 +43,11 @@ public class El_ArrList {
     String allSorted(){
         arr.sort((Cars p1, Cars p2)->(int) (p1.price-p2.price));
         String result;
-        result="{\"cars\":";
+        result="[{\"cars\":";
         for (int i = 0; i < arr.size(); i++) {
             result=result+gson.toJson(arr.get(i));
         }
-        result=result+"}";
+        result=result+"}]";
         return result;
     }
 
